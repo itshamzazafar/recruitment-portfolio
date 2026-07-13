@@ -1,0 +1,52 @@
+import {
+  Briefcase,
+  Building2,
+  Clock,
+  Compass,
+  Cpu,
+  Crown,
+  Eye,
+  Globe,
+  Handshake,
+  Heart,
+  HeartPulse,
+  Landmark,
+  MessageSquare,
+  Scale,
+  ShoppingBag,
+  Target,
+  TrendingUp,
+  UserCheck,
+  Users,
+  Wrench,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react'
+
+const iconMap: Record<string, LucideIcon> = {
+  Briefcase,
+  Building2,
+  Clock,
+  Compass,
+  Cpu,
+  Crown,
+  Eye,
+  Globe,
+  Handshake,
+  Heart,
+  HeartPulse,
+  Landmark,
+  MessageSquare,
+  Scale,
+  ShoppingBag,
+  Target,
+  TrendingUp,
+  UserCheck,
+  Users,
+  Wrench,
+  Zap,
+}
+
+export function getIcon(name: string): LucideIcon {
+  return iconMap[name] ?? Briefcase
+}
