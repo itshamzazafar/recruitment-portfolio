@@ -23,7 +23,7 @@ export function Testimonials() {
     <>
       <PageHero
         title="Testimonials"
-        subtitle="Hear from the employers and professionals who have partnered with TalentBridge."
+        subtitle="Hear from the employers and professionals who have partnered with Talent Bridge."
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

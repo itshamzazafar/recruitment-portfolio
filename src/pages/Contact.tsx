@@ -56,7 +56,7 @@ export function Contact() {
               <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
                 <iframe
                   title="Office location map"
-                  src="https://maps.google.com/maps?q=Clifton+Karachi&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=5-A+Railway+Rd+Kausar+Colony+Bahawalpur&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   className="h-64 w-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

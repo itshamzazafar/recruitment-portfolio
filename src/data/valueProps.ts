@@ -32,7 +32,7 @@ export const valueProps: ValueProp[] = [
   {
     title: 'Local & Global Reach',
     description:
-      'Based in Karachi with a network spanning Pakistan, the GCC, and international markets.',
+      'Based in Bahawalpur, Pakistan, supporting startups, agencies, and growing businesses with focused sourcing.',
     icon: 'Globe',
   },
   {

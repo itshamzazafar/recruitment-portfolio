@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { CheckCircle, Loader2 } from 'lucide-react'
+import { agency } from '../data/agency'
 
 type InquiryType = 'employer' | 'candidate' | 'general'
 
@@ -30,6 +31,12 @@ const initialForm: FormData = {
   message: '',
 }
 
+const inquiryLabels: Record<InquiryType, string> = {
+  employer: 'Employer — I want to hire',
+  candidate: 'Candidate — I want a job',
+  general: 'General inquiry',
+}
+
 function validate(data: FormData): FormErrors {
   const errors: FormErrors = {}
 
@@ -56,19 +63,62 @@ export function ContactForm({ defaultInquiryType = 'general' }: ContactFormProps
   const [errors, setErrors] = useState<FormErrors>({})
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    setSubmitError(null)
+
     const validationErrors = validate(form)
     setErrors(validationErrors)
-
     if (Object.keys(validationErrors).length > 0) return
 
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    if (!accessKey) {
+      setSubmitError(
+        'Email sending is not configured yet. Add VITE_WEB3FORMS_ACCESS_KEY to your .env file (see README).',
+      )
+      return
+    }
+
     setSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 800))
-    setSubmitting(false)
-    setSuccess(true)
-    setForm({ ...initialForm, inquiryType: defaultInquiryType })
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New contact from ${form.name} (${inquiryLabels[form.inquiryType]})`,
+          from_name: agency.shortName,
+          name: form.name,
+          email: form.email,
+          phone: form.phone || 'Not provided',
+          inquiry_type: inquiryLabels[form.inquiryType],
+          message: form.message,
+        }),
+      })
+
+      const result = (await response.json()) as { success?: boolean; message?: string }
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Failed to send message. Please try again.')
+      }
+
+      setSuccess(true)
+      setForm({ ...initialForm, inquiryType: defaultInquiryType })
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again or email us directly.',
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (success) {
@@ -200,6 +250,12 @@ export function ContactForm({ defaultInquiryType = 'general' }: ContactFormProps
           </p>
         )}
       </div>
+
+      {submitError && (
+        <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+          {submitError}
+        </p>
+      )}
 
       <button
         type="submit"

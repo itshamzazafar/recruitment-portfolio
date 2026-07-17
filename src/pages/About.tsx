@@ -6,13 +6,14 @@ import { FadeIn } from '../components/FadeIn'
 import { aboutStory, milestones } from '../data/milestones'
 import { valueProps } from '../data/valueProps'
 import { team } from '../data/team'
+import { agency } from '../data/agency'
 
 export function About() {
   return (
     <>
       <PageHero
-        title="About TalentBridge"
-        subtitle="We believe great recruitment is built on trust, expertise, and genuine human connection."
+        title={`About ${agency.name}`}
+        subtitle="Great hiring starts with strategic sourcing, clear outreach, and a process that moves fast."
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

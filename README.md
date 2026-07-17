@@ -1,6 +1,6 @@
-# TalentBridge Recruitment Portfolio
+# Talent Bridge Portfolio
 
-A modern marketing portfolio website for a recruitment agency, built with **Vite + React + TypeScript + Tailwind CSS**.
+A modern marketing portfolio website for Talent Bridge, built with **Vite + React + TypeScript + Tailwind CSS**.
 
 ## Quick Start
 
@@ -61,13 +61,36 @@ Change the brand color by updating `--color-brand-*` values in `src/index.css`.
 | `/testimonials` | Filterable client/candidate testimonials |
 | `/contact` | Contact form, office info, map |
 
+## Contact form email (Web3Forms — free)
+
+The contact form sends submissions to your inbox via [Web3Forms](https://web3forms.com) (free tier, no backend).
+
+1. Go to [https://web3forms.com](https://web3forms.com)
+2. Enter **the email address where you want to receive messages**
+3. Create an access key (confirm via the email they send you)
+4. Copy `.env.example` to `.env` and paste your key:
+
+```bash
+cp .env.example .env
+```
+
+```env
+VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
+```
+
+5. Restart the dev server (`npm run dev`) so Vite loads the new env var
+6. Submit a test message on `/contact` — you should get an email
+
+On Vercel/Netlify, add the same variable in the project’s **Environment Variables** settings (do not commit `.env`).
+
 ## Deploy
 
 ### Vercel (recommended)
 
 1. Push this repo to GitHub
 2. Import the project at [vercel.com](https://vercel.com)
-3. Vercel auto-detects Vite — no extra config needed
+3. Add `VITE_WEB3FORMS_ACCESS_KEY` in Project Settings → Environment Variables
+4. Vercel auto-detects Vite — no extra config needed
 
 Or use the CLI:
 
@@ -82,6 +105,8 @@ npm run build
 # Deploy the dist/ folder via Netlify dashboard or CLI
 npx netlify deploy --prod --dir=dist
 ```
+
+Add `VITE_WEB3FORMS_ACCESS_KEY` in Netlify Site settings → Environment variables.
 
 ## Tech Stack
 

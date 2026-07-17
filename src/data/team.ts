@@ -11,7 +11,7 @@ export const team: TeamMember[] = [
     id: '1',
     name: 'Rashid Mahmood',
     role: 'Founder & Managing Director',
-    bio: '15+ years in executive search. Rashid built TalentBridge on the belief that great hiring starts with genuine relationships.',
+    bio: '15+ years in executive search. Built Talent Bridge on the belief that great hiring starts with genuine relationships.',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
   },
   {

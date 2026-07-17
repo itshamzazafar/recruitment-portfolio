@@ -6,33 +6,37 @@ export interface Milestone {
 
 export const milestones: Milestone[] = [
   {
-    year: '2015',
-    title: 'Founded in Karachi',
-    description: 'TalentBridge opened its doors with a team of three and a mission to humanize recruitment.',
-  },
-  {
-    year: '2018',
-    title: '500 Placements Milestone',
-    description: 'Reached 500 successful placements across technology and finance sectors.',
-  },
-  {
-    year: '2021',
-    title: 'GCC Expansion',
-    description: 'Extended services to UAE and Saudi Arabia, serving multinational clients regionally.',
+    year: '2024',
+    title: 'Founded in Bahawalpur',
+    description:
+      'Talent Bridge launched to help startups and growing businesses hire qualified professionals faster.',
   },
   {
     year: '2024',
-    title: '2,500+ Careers Changed',
-    description: 'Celebrated over 2,500 placements with a 96% client satisfaction rate.',
+    title: 'Strategic sourcing focus',
+    description:
+      'Built a recruitment approach centered on outreach, engagement, and efficient hiring pipelines.',
+  },
+  {
+    year: '2025',
+    title: 'Serving startups & agencies',
+    description:
+      'Expanded support for startups, agencies, and growing companies looking for better talent matches.',
+  },
+  {
+    year: '2026',
+    title: 'Growing with clients',
+    description:
+      'Continuing to refine sourcing and outreach so clients hire better talent, faster.',
   },
 ]
 
 export const aboutStory = {
   mission:
-    'Our mission is to bridge the gap between exceptional talent and outstanding opportunities — creating lasting value for employers and meaningful careers for professionals.',
-  story: `TalentBridge was founded in 2015 with a simple observation: too many recruitment agencies treat people like transactions. We set out to do things differently.
+    'Help startups, agencies, and growing businesses find, engage, and hire qualified professionals through strategic sourcing, outreach, and efficient recruitment.',
+  story: `Talent Bridge was founded in 2024 with a clear goal: hire better talent, faster.
 
-Today, we partner with companies from startups to Fortune 500 enterprises, and guide professionals at every stage of their career. Our consultants specialize by industry, so you work with someone who truly understands your world.
+Too many growing companies struggle to find qualified professionals amid noisy job boards and slow processes. I built Talent Bridge around strategic sourcing and direct outreach so you connect with the right people sooner.
 
-Whether you are building a team or building a career, we are here to help you move forward — with honesty, expertise, and a genuine commitment to your success.`,
+Whether you are a startup building your first team or an agency scaling delivery, Talent Bridge focuses on efficient recruitment that respects your time and your candidates' careers.`,
 }

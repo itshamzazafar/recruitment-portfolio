@@ -14,7 +14,7 @@ export const testimonials: Testimonial[] = [
   {
     id: '1',
     quote:
-      'TalentBridge understood our culture from day one. They delivered three exceptional candidates within two weeks — we hired two.',
+      'Talent Bridge understood our culture from day one. They delivered three exceptional candidates within two weeks — we hired two.',
     name: 'Sarah Ahmed',
     role: 'HR Director',
     company: 'NovaTech Solutions',
@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
   {
     id: '2',
     quote:
-      'I had been searching for months on my own. Within three weeks of working with TalentBridge, I landed a role that truly fits my goals.',
+      'I had been searching for months on my own. Within three weeks of working with Talent Bridge, I landed a role that truly fits my goals.',
     name: 'Omar Hassan',
     role: 'Senior Software Engineer',
     company: 'Previously at FinEdge',
@@ -54,7 +54,7 @@ export const testimonials: Testimonial[] = [
   {
     id: '5',
     quote:
-      'We use TalentBridge for all our contract staffing needs. Consistent quality, fast turnaround, and great communication.',
+      'We use Talent Bridge for all our contract staffing needs. Consistent quality, fast turnaround, and great communication.',
     name: 'David Chen',
     role: 'Operations Lead',
     company: 'CloudScale Inc.',
